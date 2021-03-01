@@ -7,35 +7,38 @@ SCOPES = ['https://www.googleapis.com/auth/youtube']
 
 service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 
-response = service.search().list(part = 'snippet', order = 'viewCount', q='lil uzi vert', type = 'video', maxResults = 10).execute()
 
-searchItems = response['items']
+def createPlaylist(playlistname, queries):
 
-request_body = {
-    'snippet': {
-        'title': 'Put Me On PlayList'
-    }
-}
-
-newplaylist = service.playlists().insert(
-                part='snippet',
-                body = request_body
-              ).execute()
-
-newplaylistID = newplaylist['id']
-
-for video in searchItems:
     request_body = {
         'snippet': {
-            'playlistId': newplaylistID,
-            'resourceId': {
-                'kind': 'youtube#video',
-                'videoId': video['id']['videoId']
-            }
+            'title': 'Put Me On PlayList'
         }
     }
 
-    service.playlistItems().insert(
+    newplaylist = service.playlists().insert(
         part='snippet',
-        body=request_body
-    ).execute()
+        body = request_body
+        ).execute()
+
+    newplaylistID = newplaylist['id']
+
+    for query in queries:
+        response = service.search().list(part = 'snippet', order = 'viewCount', q=query, type = 'video', maxResults = 10).execute() 
+        searchItems = response['items']
+
+        for video in searchItems:
+            request_body = {
+                'snippet': {
+                    'playlistId': newplaylistID,
+                    'resourceId': {
+                        'kind': 'youtube#video',
+                        'videoId': video['id']['videoId']
+                    }
+                }
+            }
+
+        service.playlistItems().insert(
+            part='snippet',
+            body=request_body
+        ).execute()

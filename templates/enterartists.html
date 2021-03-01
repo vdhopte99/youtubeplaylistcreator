@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+        
+        <title>Put Me On!</title>
+    </head>
+
+    <body style="background-image: linear-gradient(100deg, #2c3e50,#27ae60,#2980b9,#e74c3c,#8e44ad); background-size: 400%;">
+
+         <div class="col-md-12" style="margin-top: 50px">
+            <div class="jumbotron" style="background:#553C7B">
+                <h1 class="display-4" style="color:white"><strong>Welcome to Put Me On!</strong></h1>
+
+                <p class="lead" style="color:white">Enter up to 5 artists you would like to listen to in the 
+                fields below!</p>
+                <hr class="my-4" style="color:white">
+                
+                <div class="col-md-5" style="margin-bottom: 50px">
+                    <form action="/playlistpage" method="GET" id="artistform">
+                        <div class="row">
+                            <label for="playlistname" class="form-label" style="color:white">PlayList Name:</label>
+                            <input type="text" class="form-control" name="playlistname" id="playlistname" required>
+                        </div>
+
+                        <div class="row">
+                            <label for="artist1" class="form-label" style="color:white">Artist 1:</label>
+                            <input type="text" class="form-control" name="artist1" id="artist1">
+                        </div>
+
+                        <div class="row">
+                            <label for="artist2" class="form-label" style="color:white">Artist 2:</label>
+                            <input type="text" class="form-control" name="artist2" id="artist2">
+                        </div>
+
+                        <div class="row">
+                            <label for="artist3" class="form-label" style="color:white">Artist 3:</label>
+                            <input type="text" class="form-control" name="artist3" id="artist3">
+                        </div>
+
+                        <div class="row">
+                            <label for="artist4" class="form-label" style="color:white">Artist 4:</label>
+                            <input type="text" class="form-control" name="artist4" id="artist4">
+                        </div>
+
+                        <div class="row">
+                            <label for="artist5" class="form-label" style="color:white">Artist 5:</label>
+                            <input type="text" class="form-control" name="artist5" id="artist5">
+                        </div>
+
+                        <div class="row" style="margin-top: 10px">
+                            <button type="submit" class="btn btn-primary btn-lg">Create Playlist</button>
+                        </div>
+                    </form>
+                </div>
+                </p>
+            </div>     
+        </div>
+
+        <!--jQuery first, then Popper.js, then Bootstrap JS-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+    </body>
+</html>
