@@ -27,11 +27,11 @@ def playlistpage():
 
         if artist is not None:
             artists.append(artist)
+    
+    playlistID = createPlaylist(playlistname, artists)
+    playlistURL = "https://www.youtube.com/playlist?list=" + playlistID
 
-
-
-   
-    html = render_template('playlistpage.html')
+    html = render_template('playlistpage.html', playlistname=playlistname, playlistURL=playlistURL, artists=artists)
     response = make_response(html)
     return response
 

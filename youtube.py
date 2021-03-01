@@ -7,12 +7,11 @@ SCOPES = ['https://www.googleapis.com/auth/youtube']
 
 service = Create_Service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 
-
 def createPlaylist(playlistname, queries):
 
     request_body = {
         'snippet': {
-            'title': 'Put Me On PlayList'
+            'title': playlistname
         }
     }
 
@@ -38,7 +37,9 @@ def createPlaylist(playlistname, queries):
                 }
             }
 
-        service.playlistItems().insert(
-            part='snippet',
-            body=request_body
-        ).execute()
+            service.playlistItems().insert(
+                part='snippet',
+                body=request_body
+            ).execute()
+    
+    return newplaylistID

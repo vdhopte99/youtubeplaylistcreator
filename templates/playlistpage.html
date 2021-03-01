@@ -18,7 +18,17 @@
 
          <div class="col-md-12" style="margin-top: 50px">
             <div class="jumbotron" style="background:#553C7B">
-                <h1 class="display-4" style="color:white"><strong>Welcome to Put Me On!</strong></h1>
+                <h1 class="display-4" style="color:white"><strong>Put You On!</strong></h1>
+
+                <p class="lead" style="color:white">Your Playlist {{playlistname}} was created!</p>
+
+                <ul>
+                    {% for artist in artists %}
+                    <li style="color:white">{{artist}}</li>
+                    {% endfor %}
+                </ul>
+
+                <a href="{{playlistURL}}" class="btn btn-primary btn-lg" role="button">Go To My Playlist!</a>
 
                 </p>
             </div>     
